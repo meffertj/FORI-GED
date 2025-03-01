@@ -1,6 +1,6 @@
 # GED_2024
 
-Research on ILPs for Graph Edit Distance
+Code for our paper "Enhancing Graph Edit Distance Computation: Stronger and Orientation-based ILP Formulations"
 
 ## Installing
 
