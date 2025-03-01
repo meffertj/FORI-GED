@@ -11,8 +11,6 @@ Code for our paper "Enhancing Graph Edit Distance Computation: Stronger and Orie
 - LIBLSAP: https://forge.greyc.fr/projects/liblsap/ (header only, add LIBLSAP_ROOT=~/liblsap to cmake options)
 need to change ```static const DataType _zero = 0;``` in liblsap/cpp/include/lsap.hh, line 50 to ```static constexpr DataType _zero = 0;```
 
-- (maybe install Gurobi as well)
-
 ### Variables to add to path/cmake:
 
 #### add the following to your cmake options:
@@ -22,4 +20,3 @@ need to change ```static const DataType _zero = 0;``` in liblsap/cpp/include/lsa
 #### add the following to your environment:
 
 - LIBLSAP_ROOT=/path/to/liblsap;GEDLIB_ROOT=/path/to/gedlib;GUROBI_HOME="/path/to/gurobi1200/linux64/"
-- for a screenshot of how my CLion configuration is set up look at "cmake_settings.png"
