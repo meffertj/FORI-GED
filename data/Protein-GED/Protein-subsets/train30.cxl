@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<GraphCollection>
+<protein>
+<print file="enzyme_47.gxl" class="1"/>
+<print file="enzyme_371.gxl" class="4"/>
+<print file="enzyme_407.gxl" class="5"/>
+<print file="enzyme_512.gxl" class="6"/>
+<print file="enzyme_99.gxl" class="1"/>
+<print file="enzyme_222.gxl" class="3"/>
+<print file="enzyme_276.gxl" class="3"/>
+<print file="enzyme_378.gxl" class="4"/>
+<print file="enzyme_67.gxl" class="1"/>
+<print file="enzyme_193.gxl" class="2"/>
+</protein>
+</GraphCollection>

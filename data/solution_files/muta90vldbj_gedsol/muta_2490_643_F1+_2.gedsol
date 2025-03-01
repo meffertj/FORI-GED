@@ -1,0 +1,213 @@
+* OPTIMAL
+n s 0 1
+n s 1 0
+n s 2 5
+n s 3 2
+n s 4 34
+n s 5 4
+n s 6 6
+n s 7 12
+n s 8 14
+n s 9 22
+n s 10 27
+n s 11 20
+n s 12 26
+n s 13 21
+n s 14 33
+n s 15 13
+n s 16 7
+n s 17 3
+n s 18 8
+n s 19 9
+n s 20 15
+n s 21 10
+n s 22 16
+n s 23 23
+n s 24 24
+n s 25 28
+n s 26 30
+n s 27 31
+n s 28 35
+n s 29 32
+n s 30 37
+n s 31 25
+n s 32 19
+n s 33 40
+n s 34 17
+n s 35 39
+n s 36 41
+n s 37 42
+n s 38 11
+n s 39 36
+n s 40 38
+n s 41 18
+n s 42 43
+n s 43 77
+n s 44 76
+n s 45 45
+n s 46 44
+n s 47 78
+n s 48 47
+n s 49 49
+n s 50 46
+n s 51 56
+n s 52 61
+n s 53 57
+n s 54 62
+n s 55 65
+n s 56 66
+n s 57 60
+n s 58 73
+n s 59 74
+n s 60 75
+n s 61 55
+n s 62 48
+n s 63 50
+n s 64 51
+n s 65 52
+n s 66 53
+n s 67 58
+n s 68 54
+n s 69 59
+n s 70 63
+n s 71 67
+n s 72 69
+n s 73 68
+n s 74 70
+n s 75 71
+n s 76 72
+n s 77 81
+n s 78 82
+n s 79 83
+n s 80 64
+n s 81 87
+n s 82 86
+n s 83 89
+n s 84 90
+n s 85 91
+n s 86 94
+n s 87 93
+n s 88 92
+n s 89 80
+n s 90 79
+n s 91 88
+n s 92 84
+n s 93 85
+n i 29
+e s 0 0
+e s 1 4
+e s 2 42
+e s 4 3
+e s 6 11
+e s 9 33
+e s 10 19
+e s 11 46
+e s 12 25
+e s 13 32
+e s 14 20
+e s 15 43
+e s 16 6
+e s 17 7
+e s 18 8
+e s 19 14
+e s 20 44
+e s 21 15
+e s 22 22
+e s 24 27
+e s 25 29
+e s 26 47
+e s 28 34
+e s 29 36
+e s 31 24
+e s 33 45
+e s 34 39
+e s 35 40
+e s 36 41
+e s 37 16
+e s 39 38
+e s 40 17
+e s 43 49
+e s 44 83
+e s 45 82
+e s 46 51
+e s 47 50
+e s 49 53
+e s 51 52
+e s 52 62
+e s 54 63
+e s 55 68
+e s 56 71
+e s 57 72
+e s 58 66
+e s 59 79
+e s 60 80
+e s 61 81
+e s 62 61
+e s 63 54
+e s 64 56
+e s 65 57
+e s 66 58
+e s 67 59
+e s 68 64
+e s 69 60
+e s 71 69
+e s 72 73
+e s 73 75
+e s 74 74
+e s 75 76
+e s 76 77
+e s 77 78
+e s 78 87
+e s 79 88
+e s 80 89
+e s 81 70
+e s 82 93
+e s 83 92
+e s 84 95
+e s 85 96
+e s 86 97
+e s 87 100
+e s 88 99
+e s 89 98
+e s 90 86
+e s 91 85
+e s 93 90
+e s 94 91
+e d 3
+e d 5
+e d 7
+e d 8
+e d 23
+e d 27
+e d 30
+e d 32
+e d 38
+e d 41
+e d 42
+e d 48
+e d 50
+e d 53
+e d 70
+e d 92
+e i 1
+e i 2
+e i 5
+e i 9
+e i 10
+e i 12
+e i 13
+e i 18
+e i 21
+e i 23
+e i 26
+e i 28
+e i 30
+e i 31
+e i 35
+e i 37
+e i 48
+e i 55
+e i 65
+e i 67
+e i 84
+e i 94
