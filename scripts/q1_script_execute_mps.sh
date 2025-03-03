@@ -1,0 +1,1 @@
+for j in *.mps; do for k in {10000,10100,10200,10300,10400}; do logfile=${j::-4}_$k.log; solfile=${j::-4}_$k.sol; gurobi_cl Threads=8 TimeLimit=600 Seed=$k ResultFile=$solfile LogFile=$logfile $j; done; done

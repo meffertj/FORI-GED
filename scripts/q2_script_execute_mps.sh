@@ -1,0 +1,1 @@
+for j in *.mps; do for k in {101,102,103,104,105}; do logfile=${j::-4}_$k.log; solfile=${j::-4}_$k.sol; gurobi_cl Crossover=0 Method=2 NodeMethod=2 RINS=0 Cuts=0 Disconnected=2 TimeLimit=600 ResultFile=$solfile LogFile=$logfile Seed=$k $j; done; done
