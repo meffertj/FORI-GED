@@ -24,8 +24,8 @@ need to change ```static const DataType _zero = 0;``` in liblsap/cpp/include/lsa
 ## How to replicate our results
 
 ## Without installation
-We provide .mps formulation files in the ```Formulations``` folder, grouped by model. In order to run formulations by bin, the scripts folder contains the files ```q1_script_execute_mps.sh``` and ```q2_script_execute_mps.sh```, which execute all the .mps file in the folder they are placed, in with the Gurobi settings used to answer research questions n.1 and n.2, respectively (cf. our paper for further details).   
-By default, both scripts invoque the Gurobi command line tool. Feel free to edit the scripts in order to read and solve the formulations with your preferred ILP solver.
+We provide .mps formulation files in the ```Formulations``` folder, grouped by model. In order to run formulations by bin, the scripts folder contains the files ```q1_script_execute_mps.sh``` and ```q2_script_execute_mps.sh```, which execute all the .mps file in the folder they are placed in, with the Gurobi settings used to answer research questions n.1 and n.2, respectively (cf. our paper for further details).   
+By default, both scripts invoke the Gurobi command line tool. Feel free to edit the scripts in order to read and solve the formulations with your preferred ILP solver.
 
 ### Example of use:
 Suppose you want to reproduce the experiments for FORI formulation on the AIDS-21-30 bin. Then,
