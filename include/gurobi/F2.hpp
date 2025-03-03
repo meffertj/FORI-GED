@@ -160,7 +160,6 @@ public:
                         }
 
                         model->update();
-                        model->write(opt_.output_lpfile_);
 
                         for (int i = 0; i < n_g; i++)
                                 constant_ += c_ie[i];
@@ -174,6 +173,7 @@ public:
                         for (kl = 0; kl < m_h; kl++)
                                 constant_ += c_ekl[kl];
                         model->addVar(1.0,1.0,constant_,GRB_BINARY,"constant");
+                        model->write(opt_.output_lpfile_);
 
 
                         model->optimize();
