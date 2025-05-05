@@ -24,6 +24,10 @@ namespace IO {
 
         std::string create_output(options &opt);
 
+        std::string createGurobiOutput(options &opt);
+
+        void writeJsonToFile(const options &opt);
+
         void setFilename(const std::string &datasetName, const std::string &formulation, options &opt);
 
         std::vector<std::string> split_string(std::string const &s);

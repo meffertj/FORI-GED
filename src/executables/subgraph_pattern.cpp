@@ -1,6 +1,5 @@
 #include <fstream>
 #include <gurobi/F1plus.hpp>
-#include <scip/scip_affine_F2.hpp>
 
 #include "auxiliary/cxxopts.hpp"
 
@@ -8,7 +7,6 @@
 
 #include "auxiliary/options.hpp"
 #include "auxiliary/io.hpp"
-#include "scip/utils.hpp"
 #include "gurobi/F2.hpp"
 #include "gurobi/FORI.hpp"
 #include "gurobi/F2plus.hpp"
@@ -89,28 +87,27 @@ int main(int argc, char **argv) {
                 std::cout << "H=" << g2 << ", n=" << opt.H_num_nodes_ << ", m=" << opt.H_num_edges_ << std::endl;
 
 
-                utils<std::string, int> utility;
                 std::string file;
                 if (formulation == "F2+") {
                         F2plus<int, int> ilp(opt);
                         IO::setFilename("subgraph", "F2+", opt);
                         ilp.ged(graph1, graph2);
-                        utility.writeJsonToFile(opt);
+                        IO::writeJsonToFile(opt);
                 } else if(formulation == "FORI"){
                         FORI<int, int> ilp(opt);
                         IO::setFilename("subgraph", "FORI", opt);
                         ilp.ged(graph1, graph2);
-                        utility.writeJsonToFile(opt);
+                        IO::writeJsonToFile(opt);
                 } else if(formulation == "F1+"){
                         F1plus<int, int> ilp(opt);
                         IO::setFilename("subgraph", "F1+", opt);
                         ilp.ged(graph1, graph2);
-                        utility.writeJsonToFile(opt);
+                        IO::writeJsonToFile(opt);
                 }else if(formulation == "F2") {
                         F2<int, int> ilp(opt);
                         IO::setFilename("subgraph", "F2", opt);
                         ilp.ged(graph1, graph2);
-                        utility.writeJsonToFile(opt);
+                        IO::writeJsonToFile(opt);
                 } else {
                         std::cout << "Unknown Formulation name: " << formulation << std::endl;
                         return 1;

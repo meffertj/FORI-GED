@@ -24,10 +24,14 @@ public:
             : graph1_(graph1), graph2_(graph2) {}
 
     /// @brief Sets edit costs directly in the graph class, depending on the Dataset
-    void getEditCosts() {
+    void getEditCosts(bool uniform) {
             if (graph1_->get_dataset() != graph2_->get_dataset()) {
                     throw std::runtime_error("Graphs are not from the same dataset!");
             }
+            if(uniform){
+              getUniformCosts(graph1_, graph2_);
+            }
+            else{
             if (graph1_->get_dataset() == "mutagenicity" || graph1_->get_dataset() == "aids") {
                     getChem2EditCosts(graph1_, graph2_);
             } else if (graph1_->get_dataset() == "protein") {
@@ -35,9 +39,33 @@ public:
             } else {
                     throw std::runtime_error("Cost function not implemented for this dataset!");
             }
+            }
     }
 
 private:
+  	void getUniformCosts(graph<std::string, int> *graph1, graph<std::string, int> *graph2){
+          std::vector<std::vector<double>> c_ik(graph1->number_of_nodes(), std::vector<double>(graph2->number_of_nodes(), 1));
+            std::vector<double> c_ie(graph1->number_of_nodes(), 1);
+            std::vector<double> c_ek(graph2->number_of_nodes(), 1);
+            std::vector<std::vector<double>> c_ijkl(graph1->number_of_edges(), std::vector<double>(graph2->number_of_edges(), 1));
+            std::vector<double> c_ije(graph1->number_of_edges(), 1);
+            std::vector<double> c_ekl(graph2->number_of_edges(), 1);
+            graph1->setGEDLIBeditcosts(c_ik, c_ie, c_ek, c_ijkl, c_ije, c_ekl);
+            graph2->setGEDLIBeditcosts(c_ik, c_ie, c_ek, c_ijkl, c_ije, c_ekl);
+  	}
+
+    void getUniformCosts(graph<std::pair<int, std::string>, std::tuple<int, int, int>> *graph1, graph<std::pair<int, std::string>, std::tuple<int, int, int>> *graph2){
+          std::vector<std::vector<double>> c_ik(graph1->number_of_nodes(), std::vector<double>(graph2->number_of_nodes(), 1));
+            std::vector<double> c_ie(graph1->number_of_nodes(), 1);
+            std::vector<double> c_ek(graph2->number_of_nodes(), 1);
+            std::vector<std::vector<double>> c_ijkl(graph1->number_of_edges(), std::vector<double>(graph2->number_of_edges(), 1));
+            std::vector<double> c_ije(graph1->number_of_edges(), 1);
+            std::vector<double> c_ekl(graph2->number_of_edges(), 1);
+
+            graph1->setGEDLIBeditcosts(c_ik, c_ie, c_ek, c_ijkl, c_ije, c_ekl);
+            graph2->setGEDLIBeditcosts(c_ik, c_ie, c_ek, c_ijkl, c_ije, c_ekl);
+  	}
+
     void getChem2EditCosts(graph<std::pair<int, std::string>, std::tuple<int, int, int>> *graph1, graph<std::pair<int, std::string>, std::tuple<int, int, int>> *graph2) {
             throw std::runtime_error("This is a Protein graph not a Mutagenicity or AIDS graph! -> Called wrong getGEDLIBeditcost() function");
     }

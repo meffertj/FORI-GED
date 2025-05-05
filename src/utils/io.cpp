@@ -212,5 +212,10 @@ namespace IO {
         return csv_graph;
     }
 
+    void writeJsonToFile(const options &opt) {
+        std::ofstream out(opt.output_fname_);
+        out << opt.output_ << std::endl;
+        out.close();
+    }
 
 } // namespace IO

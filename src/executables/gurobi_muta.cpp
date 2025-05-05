@@ -33,7 +33,8 @@ int main(int argc, char **argv) {
             "b, branchingRule", "select branching rule, 0 = scip default, 1 = 1-hop cosine similarity", cxxopts::value<int>()->default_value("0"))(
             "solutionFile", "absolute path to a .gedsol file for the corresponding instance. throws runtime error if file doesn't correspond to graph1id_graph2id", cxxopts::value<std::string>()->default_value(""))(
             "d, branchingDirection", "select branching direction, 0 = scip default, 1 = x_ik->0 and y_ijkl->1, 2 = x_ik->1 and y_ijkl->1", cxxopts::value<int>()->default_value("0"))(
-            "w, writeInFolder", "path in which to write solution file", cxxopts::value<std::string>()->default_value(""));
+            "w, writeInFolder", "path in which to write solution file", cxxopts::value<std::string>()->default_value(""))(
+            "u, uniformCosts", "Set to 1 if uniform edit costs should be used, 0 otherwise", cxxopts::value<bool>()->default_value("false"));
 
 
         auto arguments = opts.parse(argc, argv);
@@ -54,6 +55,7 @@ int main(int argc, char **argv) {
         const bool C3 = arguments["C3"].as<bool>();
         const bool C3onlySub = arguments["C3onlySub"].as<bool>();
         const bool relax = arguments["relax"].as<bool>();
+        const bool uniformCosts = arguments["uniformCosts"].as<bool>();
 
 
         if (C2F1 and C2F2) {
@@ -75,7 +77,7 @@ int main(int argc, char **argv) {
 
         /// edit costs are calculated using GEDLIB
         getGEDLIBcosts<std::string, int> getMutagenicityEditCosts(&graph1, &graph2);
-        getMutagenicityEditCosts.getEditCosts();
+        getMutagenicityEditCosts.getEditCosts(uniformCosts);
 
         options opt;
         opt.dataset_name_ = "muta";
