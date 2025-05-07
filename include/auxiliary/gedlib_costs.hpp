@@ -44,23 +44,54 @@ public:
 
 private:
   	void getUniformCosts(graph<std::string, int> *graph1, graph<std::string, int> *graph2){
-          std::vector<std::vector<double>> c_ik(graph1->number_of_nodes(), std::vector<double>(graph2->number_of_nodes(), 1));
+          std::vector<std::vector<double>> c_ik(graph1->number_of_nodes(), std::vector<double>(graph2->number_of_nodes(), 0));
             std::vector<double> c_ie(graph1->number_of_nodes(), 1);
             std::vector<double> c_ek(graph2->number_of_nodes(), 1);
-            std::vector<std::vector<double>> c_ijkl(graph1->number_of_edges(), std::vector<double>(graph2->number_of_edges(), 1));
+            std::vector<std::vector<double>> c_ijkl(graph1->number_of_edges(), std::vector<double>(graph2->number_of_edges(), 0));
             std::vector<double> c_ije(graph1->number_of_edges(), 1);
             std::vector<double> c_ekl(graph2->number_of_edges(), 1);
+
+            for (int i = 0; i < graph1->number_of_nodes(); i++) {
+                    for (int k = 0; k < graph2->number_of_nodes(); k++) {
+                            if (graph1->get_node_label(i) != graph2->get_node_label(k)) {
+                                    c_ik[i][k] = 1;
+                            }
+                    }
+            }
+            for (int ij = 0; ij < graph1->number_of_edges(); ij++) {
+                    for (int kl = 0; kl < graph2->number_of_edges(); kl++) {
+                            if (graph1->get_edge_label(ij) != graph2->get_edge_label(kl)) {
+                                    c_ijkl[ij][kl] = 1;
+                            }
+                    }
+            }
+
             graph1->setGEDLIBeditcosts(c_ik, c_ie, c_ek, c_ijkl, c_ije, c_ekl);
             graph2->setGEDLIBeditcosts(c_ik, c_ie, c_ek, c_ijkl, c_ije, c_ekl);
   	}
 
     void getUniformCosts(graph<std::pair<int, std::string>, std::tuple<int, int, int>> *graph1, graph<std::pair<int, std::string>, std::tuple<int, int, int>> *graph2){
-          std::vector<std::vector<double>> c_ik(graph1->number_of_nodes(), std::vector<double>(graph2->number_of_nodes(), 1));
+          std::vector<std::vector<double>> c_ik(graph1->number_of_nodes(), std::vector<double>(graph2->number_of_nodes(), 0));
             std::vector<double> c_ie(graph1->number_of_nodes(), 1);
             std::vector<double> c_ek(graph2->number_of_nodes(), 1);
-            std::vector<std::vector<double>> c_ijkl(graph1->number_of_edges(), std::vector<double>(graph2->number_of_edges(), 1));
+            std::vector<std::vector<double>> c_ijkl(graph1->number_of_edges(), std::vector<double>(graph2->number_of_edges(), 0));
             std::vector<double> c_ije(graph1->number_of_edges(), 1);
             std::vector<double> c_ekl(graph2->number_of_edges(), 1);
+
+            for (int i = 0; i < graph1->number_of_nodes(); i++) {
+                    for (int k = 0; k < graph2->number_of_nodes(); k++) {
+                            if (graph1->get_node_label(i) != graph2->get_node_label(k)) {
+                                    c_ik[i][k] = 1;
+                            }
+                    }
+            }
+            for (int ij = 0; ij < graph1->number_of_edges(); ij++) {
+                    for (int kl = 0; kl < graph2->number_of_edges(); kl++) {
+                            if (graph1->get_edge_label(ij) != graph2->get_edge_label(kl)) {
+                                    c_ijkl[ij][kl] = 1;
+                            }
+                    }
+            }
 
             graph1->setGEDLIBeditcosts(c_ik, c_ie, c_ek, c_ijkl, c_ije, c_ekl);
             graph2->setGEDLIBeditcosts(c_ik, c_ie, c_ek, c_ijkl, c_ije, c_ekl);
