@@ -1,6 +1,11 @@
 # FORI-GED
 
-Code for our paper "Enhancing Graph Edit Distance Computation: Stronger and Orientation-based ILP Formulations"
+This repository contains the code for the paper: 
+
+<pre>
+Andrea D’Ascenzo, Julian Meffert, Petra Mutzel, Fabrizio Rossi.
+<a href="https://www.vldb.org/pvldb/vol18/p4737-d'ascenzo.pdf">Enhancing Graph Edit Distance Computation: Stronger and Orientation-based ILP Formulations.</a>
+</pre>
 
 ## Installing
 
